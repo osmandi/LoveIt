@@ -13,7 +13,7 @@
         </title>
         {{- partial "head.html" . -}}
     </head>
-    <body>
+    <body class="{{- $.Site.Params.defaultTheme -}}">
         {{- /* Check theme isDark before body rendering */ -}}
         <script>
             window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';

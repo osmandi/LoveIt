@@ -5,6 +5,10 @@
 		<a href="{{( T "urli18n" )}}">
                 {{- .Site.Title -}}
             </a>
+	    <!-- Language Selection -->
+        {{ range $.Site.Home.AllTranslations }}
+	   <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
         </div>
         <div class="navbar-menu">
             {{- $currentPage := . }}
@@ -13,9 +17,9 @@
                     {{- .Pre | safeHTML }}{{ .Name -}}
                 </a>
             {{- end -}}
-		 {{ range $.Site.Home.AllTranslations }}
-		   <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-		 {{ end }}
+	    
+
+
             <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw" title="{{ T "switchTheme" }}"></i></a>
         </div>
     </div>
